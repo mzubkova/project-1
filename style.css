@@ -1,0 +1,150 @@
+.box {
+  position: relative;
+  width: 1600px;
+  height: 1080px;
+  background-color: E5E5E5;
+}
+.content1,
+.content2,
+.content3,
+.content4,
+.content5 {
+  width: 370px;
+  height: 409px;
+  border-radius: 7px;
+  background-color: white;
+  position: absolute;
+}
+
+.content1 {
+  left: 215px;
+  top: 167px;
+  right: 1015px;
+  bottom: 504px;
+}
+.content2 {
+  left: 615px;
+  top: 167px;
+}
+.content3 {
+  left: 1015px;
+  top: 167px;
+}
+.content4 {
+  left: 142px;
+  top: 622px;
+}
+.content5 {
+  left: 615px;
+  top: 606px;
+}
+.p1,
+.p2,
+.p3,
+.p4,
+.p5 {
+  width: 326px;
+  height: 79px;
+  font-size: 16px;
+  line-height: 19, 2px;
+  font-style: normal;
+  font-family: Gilroy;
+}
+.info1,
+.info2,
+.info3,
+.info4,
+.info5 {
+  position: absolute;
+  width: 151px;
+  height: 162px;
+}
+.info1 {
+  top: 213px;
+  left: 405px;
+}
+.info2 {
+  top: 213px;
+  left: 805px;
+}
+
+.info3 {
+  top: 213px;
+  left: 1205px;
+}
+
+.info4 {
+  top: 668px;
+  left: 332px;
+}
+
+.info5 {
+  top: 652px;
+  left: 805px;
+}
+
+.img1,
+.img2,
+.img3,
+.img4,
+.img5 {
+  width: 147px;
+  height: 189px;
+  position: absolute;
+  background-color: #c4c4c4;
+  border-radius: 7px;
+}
+.img1 {
+  position: absolute;
+  top: 204px;
+  left: 238px;
+}
+.img2 {
+  position: absolute;
+  top: 204px;
+  left: 638px;
+}
+.img3 {
+  position: absolute;
+  top: 204px;
+  left: 1038px;
+}
+.img4 {
+  position: absolute;
+  top: 659px;
+  left: 165px;
+}
+.img5 {
+  position: absolute;
+  top: 643px;
+  left: 638px;
+}
+.one,
+.two,
+.thee,
+.four,
+.five {
+  position: absolute;
+  width: 146px;
+  height: 19px;
+}
+.one {
+  left: 238px;
+  top: 522px;
+}
+.two {
+  left: 638px;
+  top: 522px;
+}
+.three {
+  left: 1038px;
+  top: 522px;
+}
+.four {
+  left: 165px;
+  top: 977px;
+}
+.five {
+  left: 638px;
+  top: 961px;
+}
