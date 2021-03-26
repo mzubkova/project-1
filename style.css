@@ -1,0 +1,31 @@
+.main {
+  position: relative;
+}
+.main__box{
+  display: flex;
+  width: 1170px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+}
+
+.main__box-content {
+  display: inline-block;
+  width: 370px;
+  height: 409px;
+  border-radius: 7px;
+  background-color: white;
+
+}
+
+.main__box-btn {
+  bottom: 0;
+  width: 146px;
+  height: 19px;
+  outline: none;
+  background-color: blue;
+  border:none;
+}
+.main__box-list{
+  display: inline-block;
+}
