@@ -77,7 +77,7 @@
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+.modal__dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
