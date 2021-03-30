@@ -1,0 +1,16 @@
+@mixin make-titles(
+  $sizes: $title-sizes,
+  $color: $title-color,
+) {
+  .title {
+    @extend %base-title;
+    color: $color;
+
+
+    @each $name, $value in $sizes {
+      &--#{$name} {
+        font-size: $value;
+      }
+    }
+  }
+}
