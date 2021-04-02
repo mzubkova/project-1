@@ -2,7 +2,7 @@
   font: 400 1rem "Gilroy", sans-serif;
   color: #484b54;
 }
-.modal-title {
+.modal-content__header-title {
   position: relative;
   top: -5px;
   right: -15px;
@@ -27,7 +27,7 @@
   opacity: 1;
 }
 
-.close {
+.modal-content__header-close {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -35,11 +35,11 @@
   height: 20px;
   opacity: 0.6;
 }
-.close:hover {
+.modal-content__header-close:hover {
   opacity: 1;
 }
-.close:before,
-.close:after {
+.modal-content__header-close:before,
+.modal-content__header-close:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -47,10 +47,10 @@
   width: 2px;
   background-color: #333;
 }
-.close:before {
+.modal-content__header-close:before {
   transform: rotate(45deg);
 }
-.close:after {
+.modal-content__header-close:after {
   transform: rotate(-45deg);
 }
 .modal-footer {
@@ -60,7 +60,7 @@
   right: 10px;
   height: 20px;
 }
-.btn-btn-default {
+.modal-footer__-btn-default {
   position: relative;
   left: -90px;
   top: 12px;
@@ -72,7 +72,7 @@
   background-color: #1c44a3;
   opacity: 0.7;
 }
-.btn-btn-primary {
+.modal-footer__btn-primary {
   position: relative;
   top: -14px;
   padding: 5px 20px;
@@ -83,9 +83,9 @@
   background-color: #1c44a3;
   opacity: 0.7;
 }
-.btn-btn-default:hover {
+.modal-footer__-btn-default:hover {
   opacity: 1;
 }
-.btn-btn-primary:hover {
+.modal-footer__btn-primary:hover {
   opacity: 1;
 }
