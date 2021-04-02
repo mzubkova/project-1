@@ -1,0 +1,82 @@
+body {
+    font-family: 'Miriam Libre', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    /*background:rgb(205, 203, 233);*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+*,
+*:before
+*:after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 1200px;
+    margin: 0 auto;
+}
+
+/*Header*/
+.header{
+    padding-top: 30px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/*Nav*/
+.nav {
+    font-size: 17px;
+}
+
+.nav_link {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    transition: color .2s linear;
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav_link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    display: none;
+    background-color: rgb(44, 50, 133);
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.nav_link:hover {
+    color: rgb(26, 26, 26);
+}
+
+.nav_link:hover:after {
+    display: block;
+}
+
+.header_inner {
+    margin-left: 75%;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;*/
+    
+}
+
+.logotipe {
+    margin-left: 10%;
+}
