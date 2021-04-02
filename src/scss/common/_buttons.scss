@@ -1,0 +1,30 @@
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  font-family: $btn-ff;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+}
+
+.btn--add {
+  background-color: $text-cerulean-blue;
+  border-radius: 50%;
+  height: 44px;
+  margin-left: auto;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.btn--add::before {
+  color: $white;
+  content: "+";
+  font-size: $btn-fz-lg;
+  left: 13px;
+  line-height: 1;
+  position: absolute;
+  top: 7px;
+  z-index: 2;
+}

@@ -1,0 +1,10 @@
+.container {
+  @include make-container();
+
+  @each $name, $value in $grid-breakpoints {
+    @include media-breakpoint($value) {
+      max-width: map-get($container-max-width, $name);
+    }
+  }
+}
+
