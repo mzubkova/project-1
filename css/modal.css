@@ -60,7 +60,7 @@
   right: 10px;
   height: 20px;
 }
-.modal-footer__-btn-default {
+.modal-footer__btn-default {
   position: relative;
   left: -90px;
   top: 12px;
@@ -83,7 +83,7 @@
   background-color: #1c44a3;
   opacity: 0.7;
 }
-.modal-footer__-btn-default:hover {
+.modal-footer__btn-default:hover {
   opacity: 1;
 }
 .modal-footer__btn-primary:hover {
