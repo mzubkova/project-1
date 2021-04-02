@@ -1,0 +1,50 @@
+{
+  "developers":
+  [
+        {
+          "id":"1",
+          "name": "Марина Зубкова",
+          "birthday": "25.08.1990",
+          "born": "Харьков, Украина",
+          "education": "ХНУ имени В. Н. Каразина",
+          "addition": "С декабря 2019г по март 2020г прошла Markup course в IT School EasyCode,/n С июля по октябрь 2020г курсы Front-end Advanced в IT School CURSOR.Education",
+          "hobby": ""
+         },
+    {
+      "id":"2",
+      "name": "Инна Мисько",
+      "birthday": "09.02.1991",
+      "born": "Харьков, Украина",
+      "education": "УИПА 2014 1 год опыт работы",
+      "addition": "курсы GoIT, DevEducation",
+      "hobby": ""
+    },
+    {
+      "id":"3",
+      "name": "Анастасия Фадеева",
+      "birthday": "10.09.2001",
+      "born": "Харьков, Украина",
+      "education": "ХНУРЭ",
+      "addition": "",
+      "hobby": "Люблю организовывать различные мероприятия и лагеря. Хожу в зал, чтобы не стать буквой зю"
+    },
+    {
+      "id":"4",
+      "name": "Артем Шевляков",
+      "birthday": "04.05.2001",
+      "born": "Харьков, Украина",
+      "education": "ХНУРЭ",
+      "addition": "1 год опыта работы веб-дизайнером",
+      "hobby": "Решил попробовать себя в FrontEnd, записался на курсы DevEducation"
+    },
+    {
+      "id":"5",
+      "name": "Денис Мохов",
+      "birthday": "23.03.1990",
+      "born": "Харьков, Украина",
+      "education": "АВВМВД",
+      "addition": "Закончил курсы Full-Stuck A-level",
+      "hobby": ""
+    }
+  ]
+}
