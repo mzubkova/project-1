@@ -1,23 +1,6 @@
+//questions-list__delete-btn => button close
 
-//   const refs = {
-//     openModalBtn: document.querySelector("[data-modal-open]"),
-//     closeModalBtn: document.getElementById('btnClose'),
-//     modal: document.getElementById('modal'),
-//     dropDownBtn: document.getElementById('dropDown')
-// };
-  
-
-// refs.openModalBtn.addEventListener("click", toggleModal);
-// refs.closeModalBtn.addEventListener("click", toggleModal);
-  
-//  function toggleModal() {
-//     refs.modal.classList.toggle("is-hidden");
-//   }
-
-//   refs.openModalBtn.addEventListener("click", toggleModal);
-//   refs.closeModalBtn.addEventListener("click", toggleModal);
-
-//   function toggleModal() {
-//     refs.modal.classList.toggle("is-hidden");
-//   }
-// })();
+//var button = document.querySelector("questions-list__delete-btn");
+// button.addEventListener("click", function () {
+//     console.log("Button clicked.");
+// });
