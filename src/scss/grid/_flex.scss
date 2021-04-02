@@ -1,7 +1,0 @@
-@include generate-flex-helpers();
-
-@each $name, $value in $grid-breakpoints {
-  @include media-breakpoint($value) {
-    @include generate-flex-helpers('-#{$name}');
-  }
-}
