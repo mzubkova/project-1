@@ -16,11 +16,11 @@
 } */
 
 .modal {
-  width: 528px;
+  /* width: 528px; */
   position: fixed;
   max-width: 300px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-left: auto;
   margin-right: auto;
   padding: 15px 20px;
@@ -58,12 +58,15 @@
   border-radius: 7px;
   width: 270px;
   height: 40px;
-  padding: 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
 
+.modal__dropdown-option {
+  width: 270px;
+  height: 40px;
+}
 /* Dropdown button on hover & focus */
 /* .dropbtn:hover,
 .dropbtn:focus {
