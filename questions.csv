@@ -1,0 +1,12 @@
+topic,question,answer,StartDate
+
+JavaScript,Are there 7 primitive data types in JavaScript?,true,Date|2021-03-22T06:11:00.000Z
+JavaScript,Is using the unary plus (+ operator) the fastest way to convert a string to a number?,true,Date|2021-03-23T06:11:00.000Z
+JavaScript,Is it true that it is impossible to create an object that has no prototype?,false,Date|2021-03-24T06:11:00.000Z
+HTML,Does the <em> </em> tag make the text bold?,false,Date|2021-03-24T06:11:00.000Z
+HTML,Do I have to write alt to <img>?,true,Date|2021-03-24T06:11:00.000Z
+HTML,Do I have to write alt to <img>?,true,Date|2021-03-25T06:11:00.000Z
+CSS,Is glazed a valid border-style property?,false,Date|2021-03-25T06:11:00.000Z
+CSS,Is ems a valid unit in CSS?,false,Date|2021-03-25T06:11:00.000Z
+DOM,Are there 12 types of elements in the DOM?,false,Date|2021-03-26T06:11:00.000Z
+Node js,Is the call stack part of the V8 engine?,true,Date|2021-03-27T06:11:00.000Z
