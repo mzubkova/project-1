@@ -13,29 +13,20 @@
   height: 409px;
   border-radius: 7px;
   background-color: white;
-
 }
 .main__box-btn {
   bottom: 0;
   width: 146px;
   height: 19px;
   outline: none;
-<<<<<<< HEAD
   background-color: white;
   text-decoration: underline;
-=======
-  background-color: blue;
->>>>>>> 865992d541e53f49926b3fefe4ee3db0a2ef3390
   border:none;
 }
 .main__box-list{
   display: inline-block;
-<<<<<<< HEAD
 }
 .main__box-images {
   width: 100px;
   height: 110px;
-  background-image: ;
-=======
->>>>>>> 865992d541e53f49926b3fefe4ee3db0a2ef3390
 }
