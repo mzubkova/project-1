@@ -71,9 +71,19 @@
       background-color: $bg-white;
       border-radius: 7px;
       box-shadow: 0 5px 20px rgba(80, 80, 80, 0.1);
+      margin-bottom: 30px;
       min-height: 155px;
       position: relative;
       width: 100%;
+
+      &::before {
+        border-left: 1px solid $silver;
+        content: "";
+        height: 155px;
+        position: absolute;
+        right: 85px;
+        width: 1px;
+      }
 
       &-body {
         margin: 28px;
@@ -104,6 +114,7 @@
       line-height: 1.8;
       margin-right: 26px;
       padding: 5px 10px;
+      text-transform: uppercase;
     }
 
     &__delete {
@@ -117,7 +128,8 @@
       &-btn {
         opacity: 0.3;
         position: absolute;
-        top: 50%;
+        right: 4%;
+        top: 40%;
 
         &:hover {
           opacity: 1;
@@ -149,9 +161,15 @@
   color: $text-cerulean-blue;
 }
 
-.true-false {
+
+.true {
   background: rgba(91, 195, 54, 0.1);
   color: $text-apple;
+}
+
+.false {
+  background: rgba(91, 195, 54, 0.1);
+  color: $text-red;
 }
 
 .date {
@@ -159,7 +177,8 @@
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.36;
-  margin-left: auto;
+  margin-top: 10px;
   position: absolute;
-  right: 150px;
+  right: 100px;
+
 }

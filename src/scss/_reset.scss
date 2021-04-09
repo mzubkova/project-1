@@ -15,7 +15,7 @@ body {
   color: $body-font-color;
   color: #484b54;
   font: $body-fw $body-fz/$body-lh $body-font;
-  font: 400 1rem "Gilroy", sans-serif;
+  font: 400 1rem "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1;
   margin: 0;
@@ -86,7 +86,6 @@ textarea {
   padding: 0;
   text-decoration: none;
 }
-
 
 button {
   cursor: pointer;
