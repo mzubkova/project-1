@@ -1090,9 +1090,17 @@ button {
       border-radius: 7px;
       -webkit-box-shadow: 0 5px 20px rgba(80, 80, 80, 0.1);
               box-shadow: 0 5px 20px rgba(80, 80, 80, 0.1);
+      margin-bottom: 30px;
       min-height: 155px;
       position: relative;
       width: 100%; }
+      .questions-list__card::before {
+        border-left: 1px solid #c4c4c4;
+        content: "";
+        height: 155px;
+        position: absolute;
+        right: 85px;
+        width: 1px; }
       .questions-list__card-body {
         margin: 28px;
         width: 90%; }
@@ -1102,6 +1110,15 @@ button {
         font-weight: 400;
         line-height: 1.36;
         margin-top: 15px; }
+    .questions-list-body {
+      margin: 28px;
+      width: 90%; }
+    .questions-list-text {
+      color: #484b54;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.36;
+      margin-top: 15px; }
     .questions-list__title {
       color: #484b54;
       display: inline-block;
@@ -1114,17 +1131,14 @@ button {
       font-weight: 500;
       line-height: 1.8;
       margin-right: 26px;
-      padding: 5px 10px; }
+      padding: 5px 10px;
+      text-transform: uppercase; }
     .questions-list__delete {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
       background-color: #fff;
       border-left: 1px solid #c4c4c4;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-flow: row wrap;
-              flex-flow: row wrap;
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
@@ -1132,7 +1146,9 @@ button {
       .questions-list__delete-btn {
         opacity: 0.3;
         position: absolute;
-        top: 50%; }
+        right: 4%;
+        top: 50%;
+        top: 40%; }
         .questions-list__delete-btn:hover {
           opacity: 1; }
         .questions-list__delete-btn::before, .questions-list__delete-btn::after {
@@ -1152,15 +1168,19 @@ button {
   background: rgba(54, 87, 195, 0.1);
   color: #3657c3; }
 
-.true-false {
+.true {
   background: rgba(91, 195, 54, 0.1);
   color: #6ab03e; }
+
+.false {
+  background: rgba(91, 195, 54, 0.1);
+  color: #c33636; }
 
 .date {
   color: #a0a1a3;
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.36;
-  margin-left: auto;
+  margin-left: 10px;
   position: absolute;
-  right: 150px; }
+  right: 100px; }
