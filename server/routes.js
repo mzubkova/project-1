@@ -1,6 +1,6 @@
-const http = require("http");
-const host = "localhost";
-const port = 8000;
+var http = require("http");
+var host = "localhost";
+var port = 8000;
 
 var headers = {
   "Access-Control-Allow-Origin": "*",
@@ -9,7 +9,31 @@ var headers = {
   "Access-Control-Max-Age": 12344345789,
 };
 
-const questions = JSON.stringify([
+var developers = JSON.stringify([
+  {
+    id: "1",
+    name: "Марина Зубкова",
+    birthday: "25.08.1990",
+    born: "Харьков, Украина",
+    education: "ХНУ имени В. Н. Каразина",
+    addition:
+      "С декабря 2019г по март 2020г прошла Markup course в IT School EasyCode,/n С июля по октябрь 2020г курсы Front-end Advanced в IT School CURSOR.Education",
+    hobby:
+      "Практикую йогу, люблю активный отдых, путешествия, книги, рисование",
+  },
+  {
+    id: "2",
+    name: "Анастасия Фадеева",
+    birthday: "10.09.2001",
+    born: "Харьков, Украина",
+    education: "ХНУРЭ",
+    addition: "",
+    hobby:
+      "Люблю организовывать различные мероприятия и лагеря. Хожу в зал, чтобы не стать буквой зю",
+  },
+]);
+
+var questions = JSON.stringify([
   {
     topic: "JavaScript",
     type: "JSON",
@@ -84,9 +108,13 @@ const questions = JSON.stringify([
   },
 ]);
 
-const listQuestions = function (req, res) {
+var listQuestions = function (req, res) {
   res.setHeader("Content-Type", "application/json");
   switch (req.url) {
+    case "/developers":
+      res.writeHead(200, headers);
+      res.end(developers);
+      break;
     case "/questions":
       res.writeHead(200, headers);
       res.end(questions);
@@ -97,7 +125,7 @@ const listQuestions = function (req, res) {
   }
 };
 
-const server = http.createServer(listQuestions);
+var server = http.createServer(listQuestions);
 server.listen(port, host, () => {
   console.log(`Server is running on http://${host}:${port}`);
 });
