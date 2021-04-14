@@ -192,3 +192,19 @@
   position: absolute;
   right: 100px;
 }
+
+.form-questions {
+  display: flex;
+}
+
+.btn2 {
+  background-color: aqua;
+  width: 50px;
+}
+
+.questions-list--empty {
+  display: none;
+  font-size: 2rem;
+  height: 100px;
+  width: 250px;
+}

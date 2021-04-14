@@ -30,43 +30,44 @@
   <section class="questions">
     <div class="container">
       <div class="row">
-        <div class="col col-4">
-          <div class="questions-box">
-            <h4 class="questions-box__title title--h4">
-              Select the file system
-            </h4>
-            <select class="questions-box__select" name="file-system" id="file-system">
-              <option class="questions-box__option" value="" selected>
-                JSON
-              </option>
-              <option class="questions-box__option" value="">XML</option>
-              <option class="questions-box__option" value="">YAML</option>
-              <option class="questions-box__option" value="">CSV</option>
-            </select>
-          </div>
+        <div class="col col-10">
+          <form class="form-questions" id="form-questions" action="">
+            <div class="questions-box">
+              <h4 class="questions-box__title title--h4">
+                Select the file system
+              </h4>
+              <select class="questions-box__select" name="file" id="file">
+                <option class="questions-box__option" value="JSON" selected>
+                  JSON
+                </option>
+                <option class="questions-box__option" value="XML">XML</option>
+                <option class="questions-box__option" value="YAML">YAML</option>
+                <option class="questions-box__option" value="CSV">CSV</option>
+              </select>
+            </div>
+
+            <div class="questions-box">
+              <h4 class="questions-box__title title--h4">
+                Select questions theme
+              </h4>
+              <select class="questions-box__select" name="theme" id="theme">
+                <option class="questions-box__option" value="JavaScript">JavaScript</option>
+                <option class="questions-box__option" value="HTML">HTML</option>
+                <option class="questions-box__option" value="CSS">CSS</option>
+                <option class="questions-box__option" value="DOM">DOM</option>
+                <option class="questions-box__option" value="Node js">Node js</option>
+              </select>
+            </div>
+          </form>
         </div>
-        <div class="col col-4">
-          <div class="questions-box">
-            <h4 class="questions-box__title title--h4">
-              Select questions theme
-            </h4>
-            <select class="questions-box__select" name="theme" id="theme">
-              <option class="questions-box__option" value="">Theme 1</option>
-              <option class="questions-box__option" value="">Theme 2</option>
-              <option class="questions-box__option" value="">Theme 3</option>
-              <option class="questions-box__option" value="">Theme 4</option>
-              <option class="questions-box__option" value="">Theme 5</option>
-            </select>
-          </div>
-        </div>
-        <div class="col col-4">
+        <div class="col col-2">
           <div class="questions-btn">
-            <button class="questions-btn__add btn btn--add"></button>
+            <button class="questions-btn__add btn btn--add" data-toggle="modal" data-title="Заголовок 1"
+              id="modal-btn"></button>
           </div>
         </div>
         <div class="col col-12">
-          <div class="questions-list d-flex">
-
+          <div class="questions-list d-flex flex-column">
             <!-- template -->
 
             <!-- <div class="questions-list__card d-flex">
@@ -88,11 +89,85 @@
                   <button class="questions-list__delete-btn"></button>
                 </div>
               </div> -->
+            <div class="questions-list--empty">There are no questions</div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="backdrop is-hidden" id="modal">
+    <div class="modal">
+      <button class="modal__elips-btn" id="btnClose">
+      </button>
+      <h2 class="modal__title">
+        CREATE NEW QUESTION</h2>
+      <h3 class="form__name">Select question theme</h3>
+      <div class="modal__dropdown">
+        <button class="modal__dropdown-btn"></button>
+        <form class="form" action="#" method="POST" autocomplete="off">
+          <select class="modal__dropdown-select" name="theme" id="theme">
+            <option class="modal__dropdown-option" value="JavaScript">JavaScript</option>
+            <option class="modal__dropdown-option" value="HTML">HTML</option>
+            <option class="modal__dropdown-option" value="CSS">CSS</option>
+            <option class="modal__dropdown-option" value="DOM">DOM</option>
+            <option class="modal__dropdown-option" value="Node js">Node js</option>
+          </select>
+          <div id="myDropdown" class="modal__dropdown-content" id="dropDown">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+          <h3 class="form__name">Select file system</h3>
+          <ul class="format-list">
+            <li>CSV</li>
+            <li>JSON</li>
+            <li>XML</li>
+            <li>YAML</li>
+          </ul>
+          <div class="form-group">
+            <label class="form">
+              <input class="form__input" type="checkbox" name="CSV">
+            </label>
+            <label class="form">
+              <input class="form__input" type="checkbox" name="JSON">
+            </label>
+            <label class="form">
+              <input class="form__input" type="checkbox" name="XML">
+            </label>
+            <label class="form">
+              <input class="form__input" type="checkbox" name="YAML">
+            </label>
+          </div>
+          <!-- radio- button -->
+          <h3 class="form__name">Answer</h3>
+          <div class="form-checkboxes">
+            <label class="form">
+              <span class="radio-text">True</span>
+            </label>
+            <input class="form__input" type="radio" name="YAML">
+            <label class="form">
+              <span class="radio-text">False</span>
+            </label>
+            <input class="form__input" type="radio" name="YAML">
+          </div>
+          <!-- comment -->
+          <span class="form__name">Write question</span>
+          <!-- <form class="form-container" action="#" method="POST" autocomplete="off"> -->
+          <label class="form-container">
+            <textarea class="form__comment" placeholder="Write text..." name="user-message" rows="10"></textarea>
+          </label>
+          <div class="btn-container">
+            <button class="form__button"><span class="underline">Create</span></button>
+            <button class="form__button"><span class="underline">Cancel</span></button>
+          </div>
+        </form>
+      </div>
+      <!-- </form> -->
+    </div>
+  </div>
+  <script src="js/modal.js"></script>
+  <script src="js/questions.js"></script>
 </body>
 
 </html>

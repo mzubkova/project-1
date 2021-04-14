@@ -5,7 +5,7 @@
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 10;
 
   &__inner {
     align-items: center;
@@ -14,13 +14,12 @@
   }
 }
 
-/*Nav*/
 .nav {
-  font-size: 16px;
+  font-size: 1.6rem;
   text-transform: uppercase;
 
   &__link {
-    color: #484b54;
+    color: $text-abbey;
     display: inline-block;
     margin: 0 25px;
     position: relative;
@@ -29,7 +28,7 @@
     vertical-align: top;
 
     &::after {
-      background-color: #3759c5;
+      background-color: $text-cerulean-blue;
       content: "";
       display: block;
       height: 1px;
@@ -44,7 +43,7 @@
     }
 
     &:hover {
-      color: #3759c5;
+      color: $text-cerulean-blue;
       font-weight: 500;
     }
 
@@ -52,9 +51,9 @@
       opacity: 1;
 
       hr {
-        background-color: #c4c4c4;
-        border: none;
-        color: #c4c4c4; /* Цвет линии для IE6-7 */
+        background-color: $silver;
+        border: 0;
+        color: $silver;
         height: 1px;
         margin-top: 7px;
       }
@@ -62,7 +61,3 @@
   }
 }
 
-.logo {
-  height: auto;
-  width: 117px;
-}
