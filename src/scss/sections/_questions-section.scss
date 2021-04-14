@@ -1,5 +1,5 @@
 .questions {
-  padding: 48px 0 111px;
+  padding: 150px 0 0;
 
   &-box {
     &:first-child {
@@ -79,7 +79,7 @@
       &::before {
         border-left: 1px solid $silver;
         content: "";
-        height: 155px;
+        height: 100%;
         position: absolute;
         right: 85px;
         width: 1px;
@@ -97,6 +97,19 @@
         line-height: 1.36;
         margin-top: 15px;
       }
+    }
+
+    &-body {
+      margin: 28px;
+      width: 90%;
+    }
+
+    &-text {
+      color: $text-abbey;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.36;
+      margin-top: 15px;
     }
 
     &__title {
@@ -120,8 +133,6 @@
     &__delete {
       align-items: center;
       background-color: $bg-white;
-      border-left: 1px solid $silver;
-      flex-flow: row wrap;
       justify-content: center;
       width: 10%;
 
@@ -129,6 +140,7 @@
         opacity: 0.3;
         position: absolute;
         right: 4%;
+        top: 50%;
         top: 40%;
 
         &:hover {
@@ -161,7 +173,6 @@
   color: $text-cerulean-blue;
 }
 
-
 .true {
   background: rgba(91, 195, 54, 0.1);
   color: $text-apple;
@@ -177,8 +188,7 @@
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.36;
-  margin-top: 10px;
+  margin-left: 10px;
   position: absolute;
   right: 100px;
-
 }

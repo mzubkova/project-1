@@ -1,0 +1,72 @@
+.page {
+  height: 100vh;
+  padding-top: 170px;
+  width: 100%;
+
+  &__firstTxt {
+    font-size: 21px;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  &__secondTxt {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: left;
+    width: 45%;
+  }
+
+  &__thirdTxt {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: left;
+    width: 45%;
+  }
+
+  &__fourthTxt {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    padding: 50px 0;
+    text-align: left;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 270px;
+  }
+}
+
+.formats {
+  margin: 0 auto;
+  max-width: 1170px;
+  position: absolute;
+  width: 100%;
+
+  &__inner {
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+
+  &__item {
+    border-right: 1px #c4c4c4 solid;
+    font-size: 72px;
+    padding: 50px 88px 0 0;
+    position: relative;
+  }
+}
+
+@keyframes animate {
+  from {
+    background-position: -1000%;
+  }
+
+  to {
+    background-position: 1000%;
+  }
+}
