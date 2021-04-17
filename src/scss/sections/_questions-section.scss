@@ -71,8 +71,8 @@
       background-color: $bg-white;
       border-radius: 7px;
       box-shadow: 0 5px 20px rgba(80, 80, 80, 0.1);
+      height: 155px;
       margin-bottom: 30px;
-      min-height: 155px;
       position: relative;
       width: 100%;
 
@@ -81,13 +81,12 @@
         content: "";
         height: 100%;
         position: absolute;
-        right: 85px;
+        right: 70px;
         width: 1px;
       }
 
       &-body {
-        margin: 28px;
-        width: 90%;
+        margin: 28px 70px 0 101px;
       }
 
       &-text {
@@ -137,11 +136,12 @@
       width: 10%;
 
       &-btn {
+        height: 70px;
         opacity: 0.3;
         position: absolute;
-        right: 4%;
-        top: 50%;
-        top: 40%;
+        right: 0;
+        top: 20%;
+        width: 70px;
 
         &:hover {
           opacity: 1;
@@ -164,6 +164,13 @@
           transform: rotate(-45deg);
         }
       }
+    }
+
+    &--empty {
+      display: none;
+      font-size: 2rem;
+      height: 100px;
+      width: 250px;
     }
   }
 }
@@ -200,11 +207,4 @@
 .btn2 {
   background-color: aqua;
   width: 50px;
-}
-
-.questions-list--empty {
-  display: none;
-  font-size: 2rem;
-  height: 100px;
-  width: 250px;
 }

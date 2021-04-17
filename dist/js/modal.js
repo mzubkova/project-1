@@ -25,14 +25,20 @@ var modal = document.getElementById("modal");
 var modalContent = document.querySelector(".modal");
 var modalOpen = document.getElementById("modal-btn");
 var modalClose = document.getElementById("btnClose");
+var modalCancel = document.querySelector(".form__button--cancel");
 
 modalOpen.onclick = function () {
   modal.style.display = "block";
   modalContent.style.display = "block";
   modalContent.style.zIndex = 99;
+
 };
 
 modalClose.onclick = function () {
+  modal.style.display = "none";
+};
+
+modalCancel.onclick = function () {
   modal.style.display = "none";
 };
 

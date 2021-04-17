@@ -37,12 +37,13 @@
                 Select the file system
               </h4>
               <select class="questions-box__select" name="file" id="file">
-                <option class="questions-box__option" value="JSON" selected>
+                <option class="modal__dropdown-option option-select" value="" selected disabled></option>
+                <option class="questions-box__option option-select" value="JSON">
                   JSON
                 </option>
-                <option class="questions-box__option" value="XML">XML</option>
-                <option class="questions-box__option" value="YAML">YAML</option>
-                <option class="questions-box__option" value="CSV">CSV</option>
+                <option class="questions-box__option option-select" value="XML">XML</option>
+                <option class="questions-box__option option-select" value="YAML">YAML</option>
+                <option class="questions-box__option option-select" value="CSV">CSV</option>
               </select>
             </div>
 
@@ -51,6 +52,8 @@
                 Select questions theme
               </h4>
               <select class="questions-box__select" name="theme" id="theme">
+                <option class="questions-box__option" value="" selected disabled></option>
+                <option class="questions-box__option" value="ALL">ALL</option>
                 <option class="questions-box__option" value="JavaScript">JavaScript</option>
                 <option class="questions-box__option" value="HTML">HTML</option>
                 <option class="questions-box__option" value="CSS">CSS</option>
@@ -69,26 +72,6 @@
         <div class="col col-12">
           <div class="questions-list d-flex flex-column">
             <!-- template -->
-
-            <!-- <div class="questions-list__card d-flex">
-                <div class="questions-list__card-body">
-                  <h2 class="questions-list__title title--h2">JavaScript</h2>
-                  <span class="questions-list__type file-system">JSON</span>
-                  <span class="questions-list__type true-false">True</span>
-                  <span class="date">21/03/2021</span>
-                  <p class="questions-list__card-text">
-                    Prototypal inheritance at work. When an object property is
-                    accessed, and if the property is not found in that object,
-                    then the JavaScript engine looks at the object's prototype,
-                    then the prototype prototype, and so on. Until it finds a
-                    specific property on one of the prototypes, or until it
-                    reaches the end of the prototype chain.
-                  </p>
-                </div>
-                <div class="questions-list__delete d-flex">
-                  <button class="questions-list__delete-btn"></button>
-                </div>
-              </div> -->
             <div class="questions-list--empty">There are no questions</div>
           </div>
         </div>
@@ -105,8 +88,9 @@
       <h3 class="form__name">Select question theme</h3>
       <div class="modal__dropdown">
         <button class="modal__dropdown-btn"></button>
-        <form class="form" action="#" method="POST" autocomplete="off">
-          <select class="modal__dropdown-select" name="theme" id="theme">
+        <form class="form" action="#" method="POST" autocomplete="off" name="modalForm">
+          <select class="modal__dropdown-select" name="modal-theme" id="modal-theme">
+            <option class="modal__dropdown-option" value="" selected></option>
             <option class="modal__dropdown-option" value="JavaScript">JavaScript</option>
             <option class="modal__dropdown-option" value="HTML">HTML</option>
             <option class="modal__dropdown-option" value="CSS">CSS</option>
@@ -127,16 +111,16 @@
           </ul>
           <div class="form-group">
             <label class="form">
-              <input class="form__input" type="checkbox" name="CSV">
+              <input class="form__input form__checkbox" type="checkbox" value="CSV" name="input-file">
             </label>
             <label class="form">
-              <input class="form__input" type="checkbox" name="JSON">
+              <input class="form__input form__checkbox" type="checkbox" value="JSON" name="input-file">
             </label>
             <label class="form">
-              <input class="form__input" type="checkbox" name="XML">
+              <input class="form__input form__checkbox" type="checkbox" value="XML" name="input-file">
             </label>
             <label class="form">
-              <input class="form__input" type="checkbox" name="YAML">
+              <input class="form__input form__checkbox" type="checkbox" value="YAML" name="input-file">
             </label>
           </div>
           <!-- radio- button -->
@@ -145,27 +129,45 @@
             <label class="form">
               <span class="radio-text">True</span>
             </label>
-            <input class="form__input" type="radio" name="YAML">
+            <input class="form__input" value="true" type="radio" name="radio">
             <label class="form">
               <span class="radio-text">False</span>
             </label>
-            <input class="form__input" type="radio" name="YAML">
+            <input class="form__input" value="false" type="radio" name="radio">
           </div>
           <!-- comment -->
           <span class="form__name">Write question</span>
           <!-- <form class="form-container" action="#" method="POST" autocomplete="off"> -->
           <label class="form-container">
-            <textarea class="form__comment" placeholder="Write text..." name="user-message" rows="10"></textarea>
+            <textarea class="form__comment" name="message" rows="10"></textarea>
           </label>
           <div class="btn-container">
-            <button class="form__button"><span class="underline">Create</span></button>
-            <button class="form__button"><span class="underline">Cancel</span></button>
+            <button class="form__button form__button--create">Create</button>
+            <button class="form__button form__button--cancel"><span class="underline">Cancel</span></button>
           </div>
         </form>
       </div>
       <!-- </form> -->
     </div>
   </div>
+
+  <div id="modal-mini" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-content__header">
+          <div type="button" class="modal-content__header-close" data-dismiss="modal" aria-hidden="true">
+          </div>
+          <h4 class="modal-content__header-title">Are you sure you want to delete this question?</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="modal-footer__btn-default" data-dismiss="modal">confirm </button>
+          <button type="button" class="modal-footer__btn-primary">cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal-mini -->
+
   <script src="js/modal.js"></script>
   <script src="js/questions.js"></script>
 </body>
