@@ -1,7 +1,9 @@
+var url = "http://localhost:8000/questions";
+
 function getRequest(url) {
   return new Promise((resolve, reject) => {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:8000/questions");
+    xhr.open("GET", url);
     xhr.send();
 
     xhr.addEventListener("load", function () {
@@ -15,7 +17,7 @@ function getRequest(url) {
   });
 }
 
-getRequest("http://localhost:8000/questions")
+getRequest(url)
   .then((questions) => {
     console.log("questions", questions);
     renderAllQuestions(questions);
@@ -65,26 +67,28 @@ getRequest("http://localhost:8000/questions")
   .catch((err) => console.log("error", err));
 
 function postRequest(url, data) {
-  return new Promise((resolve, reject) => {
+  return new Promise(function (resolve, reject) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:8000/questions");
+    xhr.open("POST", url);
     xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.addEventListener("error", function () {
-      reject({ status: xhr.status, url });
+    xhr.addEventListener("load", function () {
+      if (xhr.status == 200) {
+        resolve(xhr.response);
+      } else {
+        reject({ status: xhr.status, url });
+      }
     });
     xhr.send(JSON.stringify(data));
   });
 }
 
-postRequest("http://localhost:8000/questions")
+postRequest(url)
   .then(function (response) {
     var data = JSON.parse(response);
-    resultData(data);
+    createNewQuestion(data);
+    console.log(data);
   })
-  .catch(function (error) {
-    console.log(error);
-  });
+  .catch((err) => console.log("error", err));
 
 var listContainer = document.querySelector(".questions-list");
 // var modalCreate = document.querySelector(".form__button--create");
@@ -167,14 +171,10 @@ function listItemTemplate({ _id, topic, type, question, answer, iso } = {}) {
 
 function onFormSubmitHandler(e) {
   e.preventDefault();
-
   var modal = document.getElementById("modal");
-  var errorBox = document.querySelector(".btn-container");
-  var checkbox = document.querySelector(".form__checkbox");
-
   var modalCreate = document.querySelector(".form__button--create");
-  console.log("checkbox", checkbox.value);
-
+  var error = document.querySelector(".form__error");
+  var checkbox = document.querySelector(".form__checkbox");
   var select = form.elements["modal-theme"];
   var radio = form.elements.radio;
   var message = form.elements.message;
@@ -183,23 +183,15 @@ function onFormSubmitHandler(e) {
   var checkboxValue = checkbox.value;
   var radioValue = radio.value;
   var messageValue = message.value;
-  console.log("selectValue", selectValue);
-  console.log("radioValue", radioValue);
-  console.log("messageValue", messageValue);
 
-  var error = document.createElement("p");
-  error.classList.add("form__error");
   if (!selectValue || !checkbox || !radioValue) {
-    errorBox.insertAdjacentElement("afterend", error);
-    error.textContent = "Please fill in all fields";
-    // modalCreate.disabled = true;
+    error.textContent = "Please fill in all fields!";
     modalCreate.classList.add("form__button--disabled");
     return;
   }
 
-  if (!/^[a-z0-9_-]{1,160}$/.test(messageValue)) {
-    error.textContent = "Your message must be 160 characters or less!";
-    errorBox.insertAdjacentText("afterend", error);
+  if (!/^[a-z0-9_-]{1,255}$/.test(messageValue)) {
+    error.textContent = "Your message must be 255 characters or less!";
     return;
   }
 
@@ -212,8 +204,11 @@ function onFormSubmitHandler(e) {
 
   var listItem = listItemTemplate(question);
   listContainer.insertAdjacentElement("afterbegin", listItem);
-  error.remove();
+  error.style.display = "none";
   form.reset();
+  modalCreate.addEventListener("click", function () {
+    modalCreate.classList.toggle("form__button--create");
+  });
   modal.style.display = "none";
 }
 
@@ -228,17 +223,14 @@ function createNewQuestion(topic, type, answer, question, iso, _id) {
     iso: date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear(),
   };
 
-  postRequest(
-    "http://localhost:8000/questions/new-json",
-    JSON.stringify(newQuestion)
-  );
+  postRequest(url, JSON.stringify(newQuestion));
   console.log(newQuestion);
 
   getRequest[newQuestion._id] = newQuestion;
   return { ...newQuestion };
 }
 
-function removeQuestion(_id) {
+function removeQuestion(id) {
   // listItemTemplate();
 
   // var modal = document.getElementById("modal-mini");
@@ -255,7 +247,7 @@ function removeQuestion(_id) {
   var isConfirm = confirm("Are you sure you want to delete this question?");
   console.log(isConfirm);
   if (!isConfirm) return isConfirm;
-  delete getQuestions._id;
+  delete getRequest.id;
   return isConfirm;
 }
 
@@ -266,7 +258,7 @@ function removeQuestionsFromHtml(confirmed, el) {
 
 function onDeleteHandler({ target }) {
   if (target.classList.contains("questions-list__delete-btn")) {
-    var parent = target.closest("[id]");
+    var parent = target.closest("[data-question-id]");
     var id = parent.dataset.questionId;
     var confirmed = removeQuestion(id);
     removeQuestionsFromHtml(confirmed, parent);
@@ -287,27 +279,8 @@ function setRequest(e) {
   console.log("selectValue", selectValue);
   console.log("radioValue", radioValue);
   console.log("messageValue", messageValue);
-
-  // var xhr = new XMLHttpRequest();
-  // var url = "http://localhost:8000/questions";
-  // xhr.open("POST", url, true);
-  // xhr.setRequestHeader("Content-Type", "application/json");
-  // xhr.onreadystatechange = function () {
-  //   if (xhr.readyState === 4 && xhr.status === 200) {
-  //     result.innerHTML = this.responseText;
-  //   }
-
-  var data = JSON.stringify({
-    id: 0,
-    topic: selectValue,
-    type: checkboxValue,
-    question: messageValue,
-    answer: radioValue,
-  });
-  postRequest("http://localhost:8000/questions/new-json", data);
-  console.log(data);
 }
 
-document.querySelector("nav__link").addEventListener("click", function () {
+document.querySelector(".nav__link").addEventListener("click", function () {
   this.classList.toggle("active");
 });
