@@ -4,80 +4,60 @@
         <topic>JavaScript</topic>
         <question>Are there 7 primitive data types in JavaScript?</question>
         <answer>true</answer>
-        <StartDate>
-            <iso>2021-03-22T06:11:00.000Z</iso>
-        </StartDate>
+        <iso>2021-03-22T06:11:00.000Z</iso>
     </row>
     <row>
         <topic>JavaScript</topic>
         <question>Is using the unary plus (+ operator) the fastest way to convert a string to a number?</question>
         <answer>true</answer>
-        <StartDate>
-            <iso>2021-03-23T06:11:00.000Z</iso>
-        </StartDate>
+        <iso>2021-03-23T06:11:00.000Z</iso>
     </row>
     <row>
         <topic>JavaScript</topic>
         <question>Is it true that it is impossible to create an object that has no prototype?</question>
         <answer>false</answer>
-        <StartDate>
-            <iso>2021-03-24T06:11:00.000Z</iso>
-        </StartDate>
+        <iso>2021-03-24T06:11:00.000Z</iso>
     </row>
     <row>
         <topic>HTML</topic>
         <question>Does the &lt;em&gt; &lt;/em&gt; tag make the text bold?</question>
         <answer>false</answer>
-        <StartDate>
-            <iso>2021-03-24T06:11:00.000Z</iso>
-        </StartDate>
+        <iso>2021-03-24T06:11:00.000Z</iso>
     </row>
     <row>
         <topic>HTML</topic>
         <question>Do I have to write alt to &lt;img&gt;?</question>
         <answer>true</answer>
-        <StartDate>
-            <iso>2021-03-24T06:11:00.000Z</iso>
-        </StartDate>
+        <iso>2021-03-24T06:11:00.000Z</iso>
     </row>
     <row>
         <topic>HTML</topic>
         <question>Do I have to write alt to &lt;img&gt;?</question>
         <answer>true</answer>
-        <StartDate>
-            <iso>2021-03-25T06:11:00.000Z</iso>
-        </StartDate>
+        <iso>2021-03-25T06:11:00.000Z</iso>
     </row>
     <row>
         <topic>CSS</topic>
         <question>Is glazed a valid border-style property?</question>
         <answer>false</answer>
-        <StartDate>
-            <iso>2021-03-25T06:11:00.000Z</iso>
-        </StartDate>
+        <iso>2021-03-25T06:11:00.000Z</iso>
     </row>
     <row>
         <topic>CSS</topic>
         <question>Is ems a valid unit in CSS?</question>
         <answer>false</answer>
-        <StartDate>
-            <iso>2021-03-25T06:11:00.000Z</iso>
-        </StartDate>
+        <iso>2021-03-25T06:11:00.000Z</iso>
     </row>
     <row>
         <topic>DOM</topic>
         <question>Are there 12 types of elements in the DOM?</question>
         <answer>false</answer>
-        <StartDate>
-            <iso>2021-03-26T06:11:00.000Z</iso>
-        </StartDate>
+        <iso>2021-03-26T06:11:00.000Z</iso>
     </row>
     <row>
         <topic>Node js</topic>
         <question>Is the call stack part of the V8 engine?</question>
         <answer>true</answer>
-        <StartDate>
-            <iso>2021-03-27T06:11:00.000Z</iso>
-        </StartDate>
+        <iso>2021-03-27T06:11:00.000Z</iso>
     </row>
 </root>

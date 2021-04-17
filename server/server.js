@@ -1,9 +1,9 @@
-var http = require("http");
 var host = "localhost";
 var port = 8000;
+var http = require("http");
+var fs = require("fs");
 var { json } = require("body-parser");
 var jsonParser = json();
-var fs = require("fs");
 
 var headers = {
   "Access-Control-Allow-Origin": "*",

@@ -5,7 +5,10 @@ function getQuestions(url) {
     xhr.send();
 
     xhr.addEventListener("load", function () {
-      resolve(JSON.parse(xhr.responseText));
+      var json = JSON.parse(xhr.responseText);
+      var data = json.questions;
+      resolve(data);
+      // resolve(JSON.parse(xhr.responseText));
     });
     xhr.addEventListener("error", function () {
       reject({ status: xhr.status, url });
@@ -75,8 +78,8 @@ function renderAllQuestions(questionsList) {
     return;
   }
   console.log(questionsList);
-  // console.log(questionsList[0].iso);
-  // console.log(questionsList[0].answer);
+  console.log(questionsList[0].iso);
+  console.log(questionsList[0].answer);
 
   var fragment = document.createDocumentFragment();
   questionsList.forEach((question) => {

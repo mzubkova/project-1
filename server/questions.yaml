@@ -1,69 +1,49 @@
 topic: JavaScript
 question: Are there 7 primitive data types in JavaScript?
 answer: true
-StartDate:
-  __type: Date
-  iso: 2021-03-22T06:11:00.000Z
+iso: 2021-03-22T06:11:00.000Z
 
 topic: JavaScript
 question: Is using the unary plus (+ operator) the fastest way to convert a string to a number?
 answer: true
-StartDate:
-  __type: Date
-  iso: 2021-03-23T06:11:00.000Z
+iso: 2021-03-23T06:11:00.000Z
 
 topic: JavaScript
 question: Is it true that it is impossible to create an object that has no prototype?
 answer: false
-StartDate:
-  __type: Date
-  iso: 2021-03-24T06:11:00.000Z
+iso: 2021-03-24T06:11:00.000Z
 
 topic: HTML
 question: Does the <em> </em> tag make the text bold?
 answer: false
-StartDate: 
-  __type: Date
-  iso: 2021-03-24T06:11:00.000Z
+iso: 2021-03-24T06:11:00.000Z
 
 topic: HTML
 question: Do I have to write alt to <img>?
 answer: true
-StartDate: 
-  __type: Date
-  iso: 2021-03-24T06:11:00.000Z
+iso: 2021-03-24T06:11:00.000Z
 
 topic: HTML
 question: Do I have to write alt to <img>?
 answer: true
-StartDate: 
-  __type: Date
-  iso: 2021-03-25T06:11:00.000Z
+iso: 2021-03-25T06:11:00.000Z
 
 topic: CSS
 question: Is glazed a valid border-style property?
 answer: false
-StartDate: 
-  __type: Date
-  iso: 2021-03-25T06:11:00.000Z
+iso: 2021-03-25T06:11:00.000Z
 
 topic: CSS
 question: Is ems a valid unit in CSS?
 answer: false
-StartDate: 
-  __type: Date
-  iso: 2021-03-25T06:11:00.000Z
+iso: 2021-03-25T06:11:00.000Z
 
 topic: DOM
 question: Are there 12 types of elements in the DOM?
 answer: false
-StartDate: 
-  __type: Date
-  iso: 2021-03-26T06:11:00.000Z
+iso: 2021-03-26T06:11:00.000Z
 
 topic: Node js
 question: Is the call stack part of the V8 engine?
 answer: true
-StartDate: 
-  __type: Date
-  iso: 2021-03-27T06:11:00.000Z
+iso: 2021-03-27T06:11:00.000Z
