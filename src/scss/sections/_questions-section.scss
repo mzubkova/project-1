@@ -60,7 +60,9 @@
   }
 
   &-btn {
-    margin-left: auto;
+    bottom: 0;
+    position: absolute;
+    right: 15px;
     width: 44px;
   }
 
@@ -204,7 +206,3 @@
   display: flex;
 }
 
-.btn2 {
-  background-color: aqua;
-  width: 50px;
-}

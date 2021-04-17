@@ -1,4 +1,4 @@
-function getQuestions(url) {
+function getRequest(url) {
   return new Promise((resolve, reject) => {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost:8000/questions");
@@ -8,7 +8,6 @@ function getQuestions(url) {
       var json = JSON.parse(xhr.responseText);
       var data = json.questions;
       resolve(data);
-      // resolve(JSON.parse(xhr.responseText));
     });
     xhr.addEventListener("error", function () {
       reject({ status: xhr.status, url });
@@ -16,7 +15,7 @@ function getQuestions(url) {
   });
 }
 
-getQuestions("http://localhost:8000/questions")
+getRequest("http://localhost:8000/questions")
   .then((questions) => {
     console.log("questions", questions);
     renderAllQuestions(questions);
@@ -65,10 +64,34 @@ getQuestions("http://localhost:8000/questions")
   })
   .catch((err) => console.log("error", err));
 
+function postRequest(url, data) {
+  return new Promise((resolve, reject) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost:8000/questions");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.addEventListener("error", function () {
+      reject({ status: xhr.status, url });
+    });
+    xhr.send(JSON.stringify(data));
+  });
+}
+
+postRequest("http://localhost:8000/questions")
+  .then(function (response) {
+    var data = JSON.parse(response);
+    resultData(data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
 var listContainer = document.querySelector(".questions-list");
+// var modalCreate = document.querySelector(".form__button--create");
 
 var form = document.forms.modalForm;
 form.addEventListener("submit", onFormSubmitHandler);
+// form.addEventListener("submit", setRequest);
 listContainer.addEventListener("click", onDeleteHandler);
 
 function renderAllQuestions(questionsList) {
@@ -77,9 +100,9 @@ function renderAllQuestions(questionsList) {
     console.error("Pass the list of questions!");
     return;
   }
-  console.log(questionsList);
-  console.log(questionsList[0].iso);
-  console.log(questionsList[0].answer);
+  // console.log(questionsList);
+  // console.log(questionsList[0].iso);
+  // console.log(questionsList[0].answer);
 
   var fragment = document.createDocumentFragment();
   questionsList.forEach((question) => {
@@ -186,6 +209,7 @@ function onFormSubmitHandler(e) {
     radioValue,
     messageValue
   );
+
   var listItem = listItemTemplate(question);
   listContainer.insertAdjacentElement("afterbegin", listItem);
   error.remove();
@@ -196,15 +220,21 @@ function onFormSubmitHandler(e) {
 function createNewQuestion(topic, type, answer, question, iso, _id) {
   var date = new Date();
   var newQuestion = {
+    _id: `${Math.random()}`,
     topic,
     type,
+    question,
     answer,
     iso: date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear(),
-    question,
-    _id: `question-${Math.random()}`,
   };
 
-  getQuestions[newQuestion._id] = newQuestion;
+  postRequest(
+    "http://localhost:8000/questions/new-json",
+    JSON.stringify(newQuestion)
+  );
+  console.log(newQuestion);
+
+  getRequest[newQuestion._id] = newQuestion;
   return { ...newQuestion };
 }
 
@@ -236,9 +266,48 @@ function removeQuestionsFromHtml(confirmed, el) {
 
 function onDeleteHandler({ target }) {
   if (target.classList.contains("questions-list__delete-btn")) {
-    var parent = target.closest("[data-question-id]");
+    var parent = target.closest("[id]");
     var id = parent.dataset.questionId;
     var confirmed = removeQuestion(id);
     removeQuestionsFromHtml(confirmed, parent);
   }
 }
+
+function setRequest(e) {
+  e.preventDefault();
+  var select = form.elements["modal-theme"];
+  var checkbox = document.querySelector(".form__checkbox");
+  var radio = form.elements.radio;
+  var message = form.elements.message;
+
+  var selectValue = select.value;
+  var checkboxValue = checkbox.value;
+  var radioValue = radio.value;
+  var messageValue = message.value;
+  console.log("selectValue", selectValue);
+  console.log("radioValue", radioValue);
+  console.log("messageValue", messageValue);
+
+  // var xhr = new XMLHttpRequest();
+  // var url = "http://localhost:8000/questions";
+  // xhr.open("POST", url, true);
+  // xhr.setRequestHeader("Content-Type", "application/json");
+  // xhr.onreadystatechange = function () {
+  //   if (xhr.readyState === 4 && xhr.status === 200) {
+  //     result.innerHTML = this.responseText;
+  //   }
+
+  var data = JSON.stringify({
+    id: 0,
+    topic: selectValue,
+    type: checkboxValue,
+    question: messageValue,
+    answer: radioValue,
+  });
+  postRequest("http://localhost:8000/questions/new-json", data);
+  console.log(data);
+}
+
+document.querySelector("nav__link").addEventListener("click", function () {
+  this.classList.toggle("active");
+});
