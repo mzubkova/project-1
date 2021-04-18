@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.7.0/modern-normalize.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Project 1</title>
+</head>
+
+<body>
+  <!-- navigation -->
+  <!-- home -->
+  <!-- questions -->
+  <!-- modal window -->
+  <div class="backdrop is-hidden" id="modal">
+    <div class="modal">
+      <button class="modal__elips-btn" id="btnClose">
+      </button>
+      <h2 class="modal__title">
+        CREATE NEW QUESTION</h2>
+      <h3>Select question theme</h3>
+      <div class="modal__dropdown">
+        <button class="modal__dropdown-btn"></button>
+        <form class="form" action="#" method="POST" autocomplete="off">
+          <select class="modal__dropdown-select" name="theme" id="theme">
+            <option class="modal__dropdown-option" value="">Theme 1</option>
+            <option class="modal__dropdown-option" value="">Theme 2</option>
+            <option class="modal__dropdown-option" value="">Theme 3</option>
+            <option class="modal__dropdown-option" value="">Theme 4</option>
+            <option class="modal__dropdown-option" value="">Theme 5</option>
+          </select>
+          <div id="myDropdown" class="modal__dropdown-content" id="dropDown">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+          <h3 class="form__name">Select file system</h3>
+          <ul class="format-list">
+            <li>CSV</li>
+            <li>JSON</li>
+            <li>XML</li>
+            <li>YAML</li>
+          </ul>
+          <div class="form-group">
+            <label class="form">
+              <input class="form__input" type="checkbox" name="CSV">
+            </label>
+            <label class="form">
+              <input class="form__input" type="checkbox" name="JSON">
+            </label>
+            <label class="form">
+              <input class="form__input" type="checkbox" name="XML">
+            </label>
+            <label class="form">
+              <input class="form__input" type="checkbox" name="YAML">
+            </label>
+          </div>
+          <!-- radio- button -->
+          <h3 class="form__name">Answer</h3>
+          <div class="form-checkboxes">
+            <label class="form">
+              <span class="radio-text">True</span>
+            </label>
+            <input class="form__input" type="radio" name="YAML">
+            <label class="form">
+              <span class="radio-text">False</span>
+            </label>
+            <input class="form__input" type="radio" name="YAML">
+          </div>
+          <!-- comment -->
+          <span class="form__name">Write question</span>
+          <!-- <form class="form-container" action="#" method="POST" autocomplete="off"> -->
+          <label class="form-container">
+            <textarea class="form__comment" placeholder="Write text..." name="user-message" rows="10"></textarea>
+          </label>
+          <div class="btn-container">
+            <button class="form__button"><span class="underline">Create</span></button>
+            <button class="form__button"><span class="underline">Cancel</span></button>
+          </div>
+        </form>
+      </div>
+      <!-- </form> -->
+    </div>
+  </div>
+
+  <!-- card with question + modal window-->
+  <!-- about -->
+  <script src="js/modal.js"></script>
+</body>
+
+</html>
