@@ -1,8 +1,8 @@
-const { task, src, watch, dest } = require("gulp");
-const autoprefixer = require("gulp-autoprefixer");
-const sass = require("gulp-sass");
-const imagemin = require("gulp-imagemin");
-const merge = require("merge-stream");
+var { task, src, watch, dest } = require("gulp");
+var autoprefixer = require("gulp-autoprefixer");
+var sass = require("gulp-sass");
+var imagemin = require("gulp-imagemin");
+var merge = require("merge-stream");
 
 sass.compiler = require("node-sass");
 
@@ -25,4 +25,11 @@ task("watch", () => {
 
   watch("src/assets/images/*.*", imgmin);
   watch("src/scss/**/*.scss", scss);
+});
+
+var gulp = require("gulp");
+var ghPages = require("gulp-gh-pages");
+
+gulp.task("deploy", function () {
+  return gulp.src("./dist/**/*").pipe(ghPages());
 });

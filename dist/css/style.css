@@ -228,8 +228,8 @@ button {
   top: 50%;
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
-  -webkit-transition: opasity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: opasity 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+  -webkit-transition: 2.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  transition: 2.5s cubic-bezier(0.55, 0.085, 0.68, 0.53); }
   .modal__title {
     color: #222;
     font-size: 2rem;
@@ -1853,24 +1853,24 @@ button {
   font-weight: 600;
   margin-bottom: 10px; }
 
-div {
-  margin-top: 4px; }
+.hobby01 {
+  margin: 40px 0 0 -150px; }
 
 .icon {
   margin-right: 10px; }
 
 .hobby {
   /* margin: 10% 10% 10% -80%; */
-  margin: 40px 0 0 -150px;
+  margin: 80px 0 0 0;
   position: relative; }
 
 .hobby02 {
   bottom: 0;
   left: 0;
   /* position: absolute; */
-  margin: 40px 0 -5px -150px; }
+  margin: 30px 0 0 0; }
 
-button {
+.hobby02__button {
   background-color: transparent;
   border: 0;
   cursor: pointer;
@@ -1878,8 +1878,7 @@ button {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   padding: 0; }
-
-button:hover {
-  -webkit-filter: drop-shadow(0 0 5px rgba(99, 103, 107, 0.513));
-          filter: drop-shadow(0 0 5px rgba(99, 103, 107, 0.513));
-  text-decoration: underline; }
+  .hobby02__button:hover {
+    -webkit-filter: drop-shadow(0 0 5px rgba(99, 103, 107, 0.513));
+            filter: drop-shadow(0 0 5px rgba(99, 103, 107, 0.513));
+    text-decoration: underline; }

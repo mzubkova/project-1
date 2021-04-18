@@ -21,6 +21,7 @@
     "@stylelint/postcss-css-in-js": "^0.37.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-imagemin": "^7.1.0",
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.1.0",

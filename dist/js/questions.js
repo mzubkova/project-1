@@ -235,6 +235,7 @@ function onFormSubmitHandler(e) {
   btnCreate.classList.remove("form__button--disabled");
   error.style.display = "none";
   modal.style.display = "none";
+  btnCreate.disabled = false;
   form.reset();
 }
 
