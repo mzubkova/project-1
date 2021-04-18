@@ -10,6 +10,7 @@ function getRequest(url) {
       var json = JSON.parse(xhr.responseText);
       var data = json.questions;
       resolve(data);
+      console.log(data);
     });
     xhr.addEventListener("error", function () {
       reject({ status: xhr.status, url });
@@ -19,7 +20,6 @@ function getRequest(url) {
 
 getRequest(url)
   .then((questions) => {
-    console.log("questions", questions);
     renderAllQuestions(questions);
 
     var cards = document.querySelectorAll(".questions-list__card");
@@ -86,27 +86,54 @@ postRequest(url)
   .then(function (response) {
     var data = JSON.parse(response);
     createNewQuestion(data);
-    console.log(data);
   })
   .catch((err) => console.log("error", err));
 
 var listContainer = document.querySelector(".questions-list");
-// var modalCreate = document.querySelector(".form__button--create");
-
+var modal = document.getElementById("modal");
+var modalContent = document.getElementById("modal-content");
+var modalOpen = document.getElementById("modal-btn");
+var modalClose = document.getElementById("btn-close");
+var btnCancel = document.getElementById("btn-cancel");
+var btnCreate = document.getElementById("btn-submit");
+var error = document.getElementById("error-text");
 var form = document.forms.modalForm;
+
 form.addEventListener("submit", onFormSubmitHandler);
-// form.addEventListener("submit", setRequest);
 listContainer.addEventListener("click", onDeleteHandler);
 
+// работа модального окна
+modalOpen.onclick = function () {
+  modal.style.display = "block";
+  modalContent.style.display = "block";
+  btnCreate.disabled = false;
+};
+
+modalClose.onclick = function () {
+  modal.style.display = "none";
+};
+
+btnCancel.onclick = function () {
+  modal.style.display = "none";
+  btnCreate.classList.remove("form__button--disabled");
+  error.style.display = "none";
+  modal.style.display = "none";
+  form.reset();
+};
+
+window.onclick = function (event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+// вывод вопросов на страницу
 function renderAllQuestions(questionsList) {
   var listContainer = document.querySelector(".questions-list");
   if (!questionsList) {
     console.error("Pass the list of questions!");
     return;
   }
-  // console.log(questionsList);
-  // console.log(questionsList[0].iso);
-  // console.log(questionsList[0].answer);
 
   var fragment = document.createDocumentFragment();
   questionsList.forEach((question) => {
@@ -116,28 +143,27 @@ function renderAllQuestions(questionsList) {
   listContainer.appendChild(fragment);
 }
 
+// отрисовка шаблона со всеми вопросами
 function listItemTemplate({ _id, topic, type, question, answer, iso } = {}) {
   function getListQuestions() {
     var result = [];
-
-    for (var i = 1; i <= 1; i++) {
-      var div = document.createElement("div");
-      div.append(
-        elemTopic,
-        elemSystem,
-        elemAnswer,
-        elemDate,
-        elemQuestion,
-        deleteBtn
-      );
-      div.classList.add("questions-list__card-body");
-      result.push(div);
-    }
+    var div = document.createElement("div");
+    div.append(
+      elemTopic,
+      elemSystem,
+      elemAnswer,
+      elemDate,
+      elemQuestion,
+      deleteBtn
+    );
+    div.classList.add("questions-list__card-body");
+    result.push(div);
     return result;
   }
   var div = document.createElement("div");
   div.classList.add("questions-list__card");
-  div.setAttribute("data-question-id", _id);
+  div.setAttribute("_id", _id);
+
   var elemTopic = document.createElement("h2");
   elemTopic.textContent = topic;
   elemTopic.classList.add("questions-list__title", "title--h2");
@@ -154,7 +180,7 @@ function listItemTemplate({ _id, topic, type, question, answer, iso } = {}) {
 
   var elemDate = document.createElement("span");
   var date = new Date(iso);
-  date = date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear();
+  date = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
   elemDate.textContent = date;
   elemDate.classList.add("date");
 
@@ -169,12 +195,10 @@ function listItemTemplate({ _id, topic, type, question, answer, iso } = {}) {
   return div;
 }
 
+// отправка формы из модального окна с новым вопросом
 function onFormSubmitHandler(e) {
   e.preventDefault();
-  var modal = document.getElementById("modal");
-  var modalCreate = document.querySelector(".form__button--create");
-  var error = document.querySelector(".form__error");
-  var checkbox = document.querySelector(".form__checkbox");
+  var checkbox = document.querySelector(".form-checkbox");
   var select = form.elements["modal-theme"];
   var radio = form.elements.radio;
   var message = form.elements.message;
@@ -184,9 +208,13 @@ function onFormSubmitHandler(e) {
   var radioValue = radio.value;
   var messageValue = message.value;
 
+  btnCreate.disabled = false;
+
+  var toggleTheme = document.getElementById("theme");
+
   if (!selectValue || !checkbox || !radioValue) {
     error.textContent = "Please fill in all fields!";
-    modalCreate.classList.add("form__button--disabled");
+    btnCreate.classList.add("form__button--disabled");
     return;
   }
 
@@ -204,32 +232,34 @@ function onFormSubmitHandler(e) {
 
   var listItem = listItemTemplate(question);
   listContainer.insertAdjacentElement("afterbegin", listItem);
+  btnCreate.classList.remove("form__button--disabled");
   error.style.display = "none";
-  form.reset();
-  modalCreate.addEventListener("click", function () {
-    modalCreate.classList.toggle("form__button--create");
-  });
   modal.style.display = "none";
+  form.reset();
 }
 
+// создание нового вопроса
 function createNewQuestion(topic, type, answer, question, iso, _id) {
-  var date = new Date();
+  var newDate = new Date();
   var newQuestion = {
-    _id: `${Math.random()}`,
+    _id: `${Math.floor(Math.random())}`,
     topic,
     type,
     question,
     answer,
-    iso: date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear(),
+    iso: `${
+      newDate.getMonth() + 2
+    }/"${newDate.getDate()}/${newDate.getFullYear()}
+      `,
   };
 
   postRequest(url, JSON.stringify(newQuestion));
-  console.log(newQuestion);
 
   getRequest[newQuestion._id] = newQuestion;
-  return { ...newQuestion };
+  return Object.assign(newQuestion);
 }
 
+// удаление вопроса
 function removeQuestion(id) {
   // listItemTemplate();
 
@@ -258,29 +288,14 @@ function removeQuestionsFromHtml(confirmed, el) {
 
 function onDeleteHandler({ target }) {
   if (target.classList.contains("questions-list__delete-btn")) {
-    var parent = target.closest("[data-question-id]");
+    var parent = target.closest("[_id]");
     var id = parent.dataset.questionId;
     var confirmed = removeQuestion(id);
     removeQuestionsFromHtml(confirmed, parent);
   }
 }
 
-function setRequest(e) {
-  e.preventDefault();
-  var select = form.elements["modal-theme"];
-  var checkbox = document.querySelector(".form__checkbox");
-  var radio = form.elements.radio;
-  var message = form.elements.message;
-
-  var selectValue = select.value;
-  var checkboxValue = checkbox.value;
-  var radioValue = radio.value;
-  var messageValue = message.value;
-  console.log("selectValue", selectValue);
-  console.log("radioValue", radioValue);
-  console.log("messageValue", messageValue);
-}
-
+// переключение навигации активной страницы
 document.querySelector(".nav__link").addEventListener("click", function () {
   this.classList.toggle("active");
 });

@@ -16,6 +16,18 @@
   &__logo {
     cursor: pointer;
   }
+
+  &__line {
+    border-color: transparent;
+
+    &::after {
+      background-color: $silver;
+      content: "";
+      height: 1px;
+      position: absolute;
+      width: 1170px;
+    }
+  }
 }
 
 .nav {

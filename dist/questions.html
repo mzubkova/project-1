@@ -17,30 +17,31 @@
     <div class="container">
       <div class="header__inner">
         <div class="header__logo">
-          <a href="index.html"><img class="logo" src="images/logo5.png">
-        </div></a>
+          <a href="index.html"><img class="logo" src="images/logo5.png" alt="logo">
+          </a>
+        </div>
         <div>
           <nav class="nav">
             <a class="nav__link" href="index.html"> HOME</a>
-            <a class="nav__link active" href="questions-page.html"> QUESTION</a>
-            <a class="nav__link" href="about-page.html"> ABOUT</a>
+            <a class="nav__link active" href="questions.html"> QUESTION</a>
+            <a class="nav__link" href="about.html"> ABOUT</a>
           </nav>
         </div>
       </div>
-      <hr>
+      <hr class="header__line">
+    </div>
   </header>
   <section class="questions">
     <div class="container">
       <div class="row">
         <div class="col col-10">
-          <form class="form-questions" id="form-questions" action="">
+          <form class="form-questions" id="form-questions">
             <div class="questions-box">
               <h4 class="questions-box__title title--h4">
                 Select the file system
               </h4>
               <select class="questions-box__select" name="file" id="file">
-                <option class="modal__dropdown-option option-select" value="" selected disabled></option>
-                <option class="questions-box__option option-select" value="JSON">
+                <option class="questions-box__option option-select" value="JSON" selected>
                   JSON
                 </option>
                 <option class="questions-box__option option-select" value="XML">XML</option>
@@ -53,8 +54,7 @@
                 Select questions theme
               </h4>
               <select class="questions-box__select" name="theme" id="theme">
-                <option class="questions-box__option" value="" selected disabled></option>
-                <option class="questions-box__option" value="ALL">ALL</option>
+                <option class="questions-box__option" value="ALL" selected>ALL</option>
                 <option class="questions-box__option" value="JavaScript">JavaScript</option>
                 <option class="questions-box__option" value="HTML">HTML</option>
                 <option class="questions-box__option" value="CSS">CSS</option>
@@ -66,7 +66,7 @@
         </div>
         <div class="col col-2">
           <div class="questions-btn">
-            <button class="questions-btn__add btn btn--add hvr-pulse-grow data-toggle=" modal" data-title="Заголовок 1"
+            <button class="questions-btn__add btn btn--add hvr-pulse-grow" data-toggle="modal" data-title="Заголовок 1"
               id="modal-btn"></button>
           </div>
         </div>
@@ -81,8 +81,8 @@
   </section>
 
   <div class="backdrop is-hidden" id="modal">
-    <div class="modal">
-      <button class="modal__elips-btn" id="btnClose">
+    <div class="modal" id="modal-content">
+      <button class="modal__elips-btn" id="btn-close">
       </button>
       <h2 class="modal__title">
         CREATE NEW QUESTION</h2>
@@ -91,18 +91,13 @@
         <button class="modal__dropdown-btn"></button>
         <form class="form" action="#" method="POST" autocomplete="off" name="modalForm">
           <select class="modal__dropdown-select" name="modal-theme" id="modal-theme">
-            <option class="modal__dropdown-option" value="" selected></option>
+            <option class="modal__dropdown-option"></option>
             <option class="modal__dropdown-option" value="JavaScript">JavaScript</option>
             <option class="modal__dropdown-option" value="HTML">HTML</option>
             <option class="modal__dropdown-option" value="CSS">CSS</option>
             <option class="modal__dropdown-option" value="DOM">DOM</option>
             <option class="modal__dropdown-option" value="Node js">Node js</option>
           </select>
-          <div id="myDropdown" class="modal__dropdown-content" id="dropDown">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
           <h3 class="form__name">Select file system</h3>
           <ul class="format-list">
             <li>CSV</li>
@@ -112,16 +107,16 @@
           </ul>
           <div class="form-group">
             <label class="form">
-              <input class="form__input form__checkbox" type="checkbox" value="CSV" name="input-file">
+              <input class="form__input form-checkbox" type="checkbox" value="CSV" name="input-file">
             </label>
             <label class="form">
-              <input class="form__input form__checkbox" type="checkbox" value="JSON" name="input-file">
+              <input class="form__input form-checkbox" type="checkbox" value="JSON" name="input-file">
             </label>
             <label class="form">
-              <input class="form__input form__checkbox" type="checkbox" value="XML" name="input-file">
+              <input class="form__input form-checkbox" type="checkbox" value="XML" name="input-file">
             </label>
             <label class="form">
-              <input class="form__input form__checkbox" type="checkbox" value="YAML" name="input-file">
+              <input class="form__input form-checkbox" type="checkbox" value="YAML" name="input-file">
             </label>
           </div>
           <!-- radio- button -->
@@ -137,13 +132,14 @@
             <input class="form__input" value="false" type="radio" name="radio">
           </div>
           <!-- comment -->
-          <span class="form__name">Write question<span class="form__error"></span></span>
+          <span class="form__name">Write question<span class="form__error" id="error-text"></span></span>
           <label class="form-container">
-            <textarea class="form__comment" name="message" rows="10"></textarea>
+            <textarea class="form__comment" name="message"></textarea>
           </label>
           <div class="btn-container">
-            <button class="form__button form__button--create">Create</button>
-            <button class="form__button form__button--cancel"><span class="underline">Cancel</span></button>
+            <button class="form__button form__button--create" type="submit" id="btn-submit">Create</button>
+            <button class="form__button form__button--cancel" id="btn-cancel"><span
+                class="underline">Cancel</span></button>
           </div>
         </form>
       </div>
@@ -168,7 +164,6 @@
   </div>
   <!-- modal-mini -->
 
-  <script src="js/modal.js"></script>
   <script src="js/questions.js"></script>
 </body>
 

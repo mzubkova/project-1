@@ -6,5 +6,5 @@ Application for testing well-known developers.
 
 ## Technology
 
-- HTML/ CSS
+- HTML/ SCSS
 - JavaScript

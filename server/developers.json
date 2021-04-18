@@ -2,21 +2,33 @@
   "developers": [
     {
       "id": "1",
-      "name": "Марина Зубкова",
-      "birthday": "25.08.1990",
-      "born": "Харьков, Украина",
-      "education": "ХНУ имени В. Н. Каразина",
-      "addition": "",
-      "hobby": "Практикую йогу, люблю активный отдых, путешествия, книги, рисование",
+      "ava": "images/dev01.jpg",
+      "nameFirst": "Maryna Zubkova",
+      "birthday": "August 25, 1990",
+      "born": "Kharkiv, Ukraine",
+      "education": "KhNU Karazin",
+      "addition": "Police",
+      "hobby": "Yoga, active rest, travels, books, drawing"
     },
     {
       "id": "2",
-      "name": "Анастасия Фадеева",
-      "birthday": "10.09.2001",
-      "born": "Харьков, Украина",
-      "education": "ХНУРЭ",
-      "addition": "",
-      "hobby": "Люблю организовывать различные мероприятия и лагеря. Хожу в зал, чтобы не стать буквой зю",
+      "ava": "images/dev04.jpeg",
+      "nameFirst": "Andrew  Drobot ",
+      "birthday": "27.12.1999",
+      "born": "Kharkiv, Ukraine",
+      "education": "KHHUE",
+      "addition": "0 xp",
+      "hobby": "Football, watch film's, gym, walking, learn new"
     },
+    {
+      "id": "3",
+      "ava": "images/dev03.jpg",
+      "nameFirst": "Anastasia Fadeeva",
+      "birthday": "10.09.2001",
+      "born": "Kharkiv, Ukraine",
+      "education": "KNURE",
+      "addition": "Did not work)",
+      "hobby": "Event organization, gym, music, theology"
+    }
   ]
 }
