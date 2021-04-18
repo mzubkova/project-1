@@ -1,0 +1,92 @@
+.boxText {
+  background: white;
+  /* border: saddlebrown solid 2px; */
+  width: 370px;
+  height: 409px;
+  display: flex;
+  margin: 10% 5%;
+  border-radius: 7px;
+  margin: 10% 2% 0 2%;
+}
+.boxText:hover {
+  filter: drop-shadow(0 0 5px rgba(99, 94, 94, 0.5));
+}
+.boxText4 {
+  /* width: 350px; */
+  /* margin: 70% 10% 0% -70%; */
+  margin: 10% 10% 10% -80%;
+}
+.hobby {
+  /* margin: 10% 10% 10% -80%; */
+  margin: 10px 10px 10px -150px;
+  position: relative;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(250, 245, 255);
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+}
+.avatar {
+  width: 147px;
+  height: 189px;
+  border-radius: 7px;
+  margin: 30px 20px;
+}
+.boxText01 {
+  /* max-height: 409px; */
+  width: 370px;
+}
+.card {
+  max-width: 190px;
+  max-height: 230px;
+  margin: 7% 20% 0% 0%;
+  /* width: 350px;
+  height: 70px; */
+  /* display: inline-block; */
+  display: inline-grid;
+  font-weight: 400;
+  margin: 13% 0% 10% 0%;
+}
+.name {
+  font-weight: 600;
+  width: 135px;
+}
+div {
+  margin-top: 4px;
+}
+.icon {
+  margin-right: 10px;
+}
+/* .hobby_button {
+  position: fixed; 
+  bottom: 0; 
+  right: 0;
+} */
+
+button {
+  padding: 0;
+  border: none;
+  font: icon;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+}
+button:hover {
+  filter: drop-shadow(0 0 5px rgba(99, 103, 107, 0.513));
+  text-decoration: underline;
+}
+.hobby01 {
+  width: 210px;
+  height: 79px;
+}
+.hobby02 {
+  /* position: absolute; */
+  margin: 25% 0 -5px -150px;
+  bottom: 0;
+  left: 0;
+}
